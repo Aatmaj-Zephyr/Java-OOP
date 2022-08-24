@@ -1,26 +1,22 @@
-name: Continuous Integration
+name: Prettier for JS Code
 
-# This action works with pull requests and pushes
-on:
-  workflow_dispatch:
-  pull_request:
-  push:
-    branches:
-      - main
+on: 
+ workflow_dispatch:
+ push:
 
 jobs:
-  prettier:
+  cleanup_tasks:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          # Make sure the actual branch is checked out when running on pull requests
-          ref: ${{ github.head_ref }}
-
-      - name: Prettify code
-        uses: creyD/prettier_action@v4.2
-        with:
-          # This part is also where you can pass other options, for example:
-          prettier_options: --write **/*.{java,md}
+    - name: Cloning the repository
+      uses: actions/checkout@v1
+      with:
+        fetch-depth: 1
+    - name: Prettify the Java Code
+      uses: lwerner-lshigh/prettier_action_java@v1.1.1
+      with:
+        prettier_options: '--no-semi --write *.java'
+        branch: ${{ github.head_ref }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
