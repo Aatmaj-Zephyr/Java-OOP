@@ -39,4 +39,15 @@ public abstract class myMath{
             temp=temp+power(x,i);
         }
         return temp;
-    }}
+    }
+     public static double one_plus_x(double x, int n){
+        //  (1+x)^n using binomial series expansion
+        
+           double temp=1;
+           for(int i=1;i<=n;i++){
+            temp=temp+factorial(n)*power(x,i)/(factorial(i)*factorial(n-i));
+        }
+        return temp;
+    }
+    
+}
