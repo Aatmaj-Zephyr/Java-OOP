@@ -14,5 +14,7 @@ public class Main
 		
 			double g=myMath.one_minus_x(0.5);
 		System.out.println(g);
+		double h=myMath.one_plus_x(3,2);
+		System.out.println(h);
 	}
 }
