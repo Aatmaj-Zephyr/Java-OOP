@@ -3,15 +3,16 @@ public class bank{
     int topPointer;
     bank(int numberOfAccounts){
         arrayOfAccounts = new account[numberOfAccounts];
-        topPointer=0;
+        topPointer=-1;
     }
     void addAccount(){
+                topPointer++;
+
         arrayOfAccounts[topPointer] = new account();
         arrayOfAccounts[topPointer].set_accountID(topPointer);
-        topPointer++;
     }
     void deleteAccountByAccountID(int accountID){
-        for (int i =0;i<topPointer;i++){
+        for (int i =0;i<=topPointer;i++){
             if(arrayOfAccounts[i].matchAccountId(accountID)){
                 removeAccountAtPosition(i);
             }
@@ -24,8 +25,8 @@ public class bank{
     topPointer--;
     }
     public account getNewAccountInstance(){
-        if(topPointer!=0){
-        return arrayOfAccounts[topPointer-1];
+        if(topPointer!=-1){
+        return arrayOfAccounts[topPointer];
         }
         else{
             throwEmptyAccountException();
@@ -36,7 +37,7 @@ public class bank{
         System.out.println("Error! Bank is empty");
     }
      public void displayAllAccounts(){
-         for (int i =0;i<topPointer;i++){
+         for (int i =0;i<=topPointer;i++){
               arrayOfAccounts[i].displayAccountDetails();
               System.out.println(i);
          }
