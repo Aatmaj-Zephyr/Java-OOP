@@ -1,7 +1,13 @@
 OOP in Java- collection of  exercises and practicals.
 
+## Can I contribute?
+Yes! 😄 you can definitely contribute! The following are some of the things you can do -
 
-How to contribute?
+1) If you have a program written of this topic, related to any lab or question that is not in the repository you can open up a PR. You can also open up a PR if you have another way of implementing a concept in the repo.
+2) Also, if you can see something wrong (maybe like an error or something), you can open up a PR.
+3) Another suggestion is if you can think of a creative way to explain any concept using markdown, you are welcome to contribute!
+
+## How to contribute?
 
 Please feel free to contribute. Please make sure the code is clear, variables are well named and the comments are proper.
 
